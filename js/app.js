@@ -1,3 +1,5 @@
+const API_URL = 'https://backend-leafleat-42ti8f7nz-hilmiromadoni-4647s-projects.vercel.app';
+
 const map = L.map('map').setView([-6.2, 106.816666], 10); // Jakarta coordinates
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -5,7 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Fetch locations from backend and add markers
-fetch('http://localhost:3000/api/locations')
+fetch(`${API_URL}/api/locations`)
     .then(response => response.json())
     .then(data => {
         data.forEach(location => {
@@ -22,7 +24,7 @@ map.on('click', function(e) {
     const name = prompt('Enter location name:');
     const description = prompt('Enter description:');
     if (name && description) {
-        fetch('http://localhost:3000/api/locations', {
+        fetch(`${API_URL}/api/locations`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
