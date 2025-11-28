@@ -1,4 +1,4 @@
-const API_URL = 'https://backend-leafleat-42ti8f7nz-hilmiromadoni-4647s-projects.vercel.app';
+const API_URL = 'https://web-production-233db.up.railway.app';
 
 const map = L.map('map').setView([-6.2, 106.816666], 10); // Jakarta coordinates
 
